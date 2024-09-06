@@ -1,4 +1,5 @@
 import * as THREE from 'three'
+import gsap from 'gsap'
 
 const scene = new THREE.Scene()
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000)
@@ -45,6 +46,9 @@ group.add(cube2)
 group.add(cube3)
 group.add(cube4)
 group.add(cube5)
+
+gsap.to(group.position, {duration:1, delay:1, x:2})
+gsap.to(group.position, {duration:1, delay:2, x:0})
 
 let time = Date.now()
 const clock = new THREE.Clock()
